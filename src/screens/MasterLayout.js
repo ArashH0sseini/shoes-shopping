@@ -1,51 +1,23 @@
-import { Button, Typography } from '@mui/material'
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { Hidden } from '@mui/material'
+import DesktopMenu from '../components/Menus/desktop'
+import MobileMenu from '../components/Menus/mobile'
+import Footer from '../components/Footer'
 
 export default function MasterLayout() {
   return (
-    <div>
-      <Button variant="contained" color="secondary">
-        دوم
-      </Button>
-      <Button variant="contained" color="primary">
-        اول
-      </Button>
-      <Typography color="textPrimary" variant="h1">
-        ورود
-      </Typography>
-      <Typography color="textPrimary" variant="h2">
-        ورود
-      </Typography>
-      <Typography color="textPrimary" variant="h3">
-        ورود
-      </Typography>
-      <Typography color="textPrimary" variant="h4">
-        ورود
-      </Typography>
-      <Typography color="textPrimary" variant="h5">
-        ورود
-      </Typography>
-      <Typography color="textPrimary" variant="h6">
-        ورود
-      </Typography>
-      <Typography color="textPrimary" variant="body1">
-        ورود
-      </Typography>
-      <Typography color="textPrimary" variant="body2">
-        ورود
-      </Typography>
-      <Typography color="textPrimary" variant="subtitle1">
-        ورود
-      </Typography>
-      <Typography color="textPrimary" variant="subtitle2">
-        ورود
-      </Typography>
+    <BrowserRouter>
+      <div className="w-full min-h-screen">
+        <Hidden smDown>
+          <DesktopMenu />
+        </Hidden>
+        <Hidden smUp>
+          <MobileMenu />
+        </Hidden>
 
-      <Typography color="textPrimary" variant="caption">
-        ورود
-      </Typography>
-      <br />
-      <Typography variant="overline">ورود</Typography>
-    </div>
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
