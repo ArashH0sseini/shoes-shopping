@@ -2,9 +2,7 @@
     "extends":[
         "airbnb",
         "airbnb/hooks",
-        "plugin:prettier/recommended",
-        "prettier/react",
-        "prettier/standard"
+        "plugin:prettier/recommended"
     ],
     "plugins": [
         "prettier"
