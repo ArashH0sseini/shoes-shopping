@@ -1,7 +1,5 @@
 import React from 'react'
 
 export default function index() {
-  return (
-    <div>root</div>
-  )
+  return <div>root</div>
 }
