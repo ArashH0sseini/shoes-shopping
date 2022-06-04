@@ -9,7 +9,7 @@ export default function Desktop() {
   const location = useLocation()
   const path = location.pathname
   return (
-    <div className="w-full p-[10px] flex flex-row items-center">
+    <div className="w-full p-[10px] flex flex-row items-center bg-[#131a21] shadow-custom">
       <div className="w-[200px]">
         <img src={brandLogo} alt="فروشگاه کفش" className="w-1/2 h-1/3 m-auto" />
       </div>
@@ -27,21 +27,6 @@ export default function Desktop() {
             className={path === '/' ? 'text-white' : 'text-gray-400'}
           >
             صفحه اصلی
-          </Button>
-        </div>
-        <div
-          className={
-            path === '/products'
-              ? 'border-b-[#00c1c9] border-b-2 border-b-solid rounded-lg'
-              : null
-          }
-        >
-          <Button
-            component={Link}
-            to="/products"
-            className={path === '/products' ? 'text-white' : 'text-gray-400'}
-          >
-            محصولات
           </Button>
         </div>
         <div
