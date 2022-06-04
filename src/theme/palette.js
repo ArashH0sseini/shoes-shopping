@@ -1,6 +1,6 @@
 export default {
   primary: {
-    main: '#324958',
+    main: '#00c1c9',
     contrastText: '#fff'
   },
   secondary: {
@@ -9,7 +9,7 @@ export default {
   },
   text: {
     primary: '#fff',
-    secondary: '#177a8d',
+    secondary: '#586d71',
     disabled: '#b18080'
   }
 }
