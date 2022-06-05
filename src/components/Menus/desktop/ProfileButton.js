@@ -1,13 +1,16 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import ArrowDropDown from '@mui/icons-material/ArrowDropDown'
 import { Button } from '@mui/material'
 import Fade from '@mui/material/Fade'
 import Typography from '@mui/material/Typography'
 import Avarar from '../../../assets/images/avatar.jpg'
+import { LoginContext } from '../../../contexts/LoginContext'
+import { SIGNIN, SIGNUP } from '../../../constants/ActionTypes'
 
 export default function ProfileButton() {
+  const { dispatch } = useContext(LoginContext)
   const [open, setOpen] = useState(false)
   return (
     <div className="flex items-center justify-center relative rounded-lg p-2 border-[1px] border-[#202d2a] border-solid w-[90px] h-full">
@@ -51,6 +54,10 @@ export default function ProfileButton() {
                 color="secondary"
                 size="large"
                 fullWidth
+                onClick={() => {
+                  setOpen(false)
+                  dispatch({ type: SIGNIN })
+                }}
               >
                 ورود
               </Button>
@@ -59,6 +66,10 @@ export default function ProfileButton() {
                 color="secondary"
                 size="large"
                 fullWidth
+                onClick={() => {
+                  setOpen(false)
+                  dispatch({ type: SIGNUP })
+                }}
               >
                 ثبت نام
               </Button>

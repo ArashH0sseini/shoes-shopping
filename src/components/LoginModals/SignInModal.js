@@ -1,12 +1,13 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import { Button, Modal, TextField, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { LoginContext } from '../../contexts/LoginContext'
+import { SIGNUP, FORGET_PASSWORD } from '../../constants/ActionTypes'
 
-export default function SignModal() {
-  const [open, setOpen] = useState(false)
-
+export default function SignInModal() {
+  const { state, dispatch } = useContext(LoginContext)
   return (
-    <Modal open={open} onClose={() => setOpen(false)}>
+    <Modal open={state.singin} onClose={() => dispatch({ type: 'closeAll' })}>
       <div className="w-80 h-auto bg-[#1a222a] m-auto mt-20 p-6 focus:outline-none rounded-md">
         <Typography variant="body2">شماره تماس:</Typography>
         <TextField
@@ -51,6 +52,9 @@ export default function SignModal() {
           color="primary"
           className="mt-3 text-xs justify-start"
           fullWidth
+          onClick={() => {
+            dispatch({ type: SIGNUP })
+          }}
         >
           ثبت نام نکرده اید؟
         </Button>
@@ -60,6 +64,9 @@ export default function SignModal() {
           color="primary"
           className="mt-3 text-xs justify-start"
           fullWidth
+          onClick={() => {
+            dispatch({ type: FORGET_PASSWORD })
+          }}
         >
           رمز عبور خود را فراموش کرده اید؟
         </Button>

@@ -1,12 +1,18 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import { Button, Modal, TextField, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { LoginContext } from '../../contexts/LoginContext'
+import { SIGNIN, CODE } from '../../constants/ActionTypes'
 
 export default function SignUpModal() {
-  const [open, setOpen] = useState(false)
+  const { state, dispatch } = useContext(LoginContext)
+  const singUp = () => {
+    localStorage.setItem('loginCodeType', 'signUp')
+    dispatch({ type: CODE })
+  }
 
   return (
-    <Modal open={open} onClose={() => setOpen(false)}>
+    <Modal open={state.signup} onClose={() => dispatch({ type: 'closeAll' })}>
       <div className="w-80 h-auto bg-[#1a222a] m-auto mt-20 p-6 focus:outline-none rounded-md">
         <Typography variant="body2">تلفن همراه:</Typography>
         <TextField
@@ -79,6 +85,7 @@ export default function SignUpModal() {
           color="primary"
           className="mt-5"
           fullWidth
+          onClick={singUp}
         >
           ثبت نام
         </Button>
@@ -88,6 +95,9 @@ export default function SignUpModal() {
           color="primary"
           className="mt-3 text-xs justify-start"
           fullWidth
+          onClick={() => {
+            dispatch({ type: SIGNIN })
+          }}
         >
           قبلا ثبت نام کرده اید؟
         </Button>
