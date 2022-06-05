@@ -1,5 +1,5 @@
 import React from 'react'
 
 export default function Index() {
-  return <div>Home</div>
+  return <div className="h-[500px]">Home</div>
 }
