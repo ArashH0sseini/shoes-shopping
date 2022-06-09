@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import ShoppingBag from '@mui/icons-material/ShoppingBag'
 import Typography from '@mui/material/Typography'
 import { Button } from '@mui/material'
@@ -8,11 +8,17 @@ import Fade from '@mui/material/Fade'
 import CartItem from './CartItem'
 import Product from '../../../assets/images/p1.jpg'
 import Product2 from '../../../assets/images/p2.jpg'
+import useOnClickOutside from '../../Hook/useOnClickOutside'
 
 export default function CartButton() {
   const [open, setOpen] = useState(false)
+  const cart = useRef()
+  useOnClickOutside(cart, () => setOpen(false))
   return (
-    <div className="flex mx-2 items-center justify-center rounded-lg p-2 border-[1px] border-[#202d2a] border-solid relative z-10 ">
+    <div
+      className="flex mx-2 items-center justify-center rounded-lg p-2 border-[1px] border-[#202d2a] border-solid relative z-10"
+      ref={cart}
+    >
       <div
         onClick={() => setOpen(!open)}
         className="cursor-pointer transition-all delay-[5ms] lg:hover:opacity-70"

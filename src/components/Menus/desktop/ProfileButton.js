@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useRef } from 'react'
 import ArrowDropDown from '@mui/icons-material/ArrowDropDown'
 import { Button } from '@mui/material'
 import Fade from '@mui/material/Fade'
@@ -8,12 +8,18 @@ import Typography from '@mui/material/Typography'
 import Avarar from '../../../assets/images/avatar.jpg'
 import { LoginContext } from '../../../contexts/LoginContext'
 import { SIGNIN, SIGNUP } from '../../../constants/ActionTypes'
+import useOnClickOutside from '../../Hook/useOnClickOutside'
 
 export default function ProfileButton() {
   const { dispatch } = useContext(LoginContext)
   const [open, setOpen] = useState(false)
+  const cart = useRef()
+  useOnClickOutside(cart, () => setOpen(false))
   return (
-    <div className="flex items-center justify-center relative rounded-lg p-2 border-[1px] border-[#202d2a] border-solid w-[90px] h-full z-10">
+    <div
+      ref={cart}
+      className="flex items-center justify-center relative rounded-lg p-2 border-[1px] border-[#202d2a] border-solid w-[90px] h-full z-10"
+    >
       <div
         onClick={() => setOpen(!open)}
         className="flex cursor-pointer transition-all delay-[5ms] hover:opacity-70"
