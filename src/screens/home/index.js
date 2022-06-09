@@ -3,11 +3,12 @@ import { Container } from '@mui/system'
 import React from 'react'
 import Slider from '../../components/Slider'
 import Categories from '../../components/Category'
+import Popular from '../../components/Popular'
 
 export default function Index() {
   return (
     <Container maxWidth="lg">
-      <Grid container className="my-3 flex">
+      <Grid container direction="row" className="my-3">
         <Grid
           item
           lg={8}
@@ -25,12 +26,7 @@ export default function Index() {
           <Categories />
         </Grid>
       </Grid>
-      <Grid container className="h-48 my-2">
-        پرفروش های مردانه
-      </Grid>
-      <Grid container className="h-48 my-2">
-        پرفروش های زنانه
-      </Grid>
+      <Popular />
     </Container>
   )
 }
