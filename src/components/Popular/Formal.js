@@ -19,6 +19,7 @@ export default function HighHeel() {
       direction="row"
       justifyContent="space-between"
       alignItems="center"
+      className="flex-nowrap scrollbar-hide overflow-scroll lg:flex-wrap lg:overflow-auto"
     >
       {loading ? (
         <>

@@ -4,13 +4,15 @@ module.exports = {
   theme: {
     extend: {
       flex: {
-        '2': '2 2 0%',
-        '3': '3 3 0%'
+        2: '2 2 0%',
+        3: '3 3 0%'
       },
       boxShadow: {
-        'custom': '1px 0px 3px 0px #3b3939'
+        custom: '1px 0px 3px 0px #3b3939'
       }
     }
   },
-  plugins: []
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ]
 }

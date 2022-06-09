@@ -5,7 +5,7 @@ import Title from '../TitleWithBottomBorder'
 
 export default function Index() {
   return (
-    <Grid container className="bg-[#131a21] p-5" direction="row">
+    <Grid container className="bg-[#131a21] p-[5px] sm:p-5" direction="row">
       <Container maxWidth="lg">
         <Grid className="bg-[#131a21] p-5" container direction="row">
           <Grid item lg={3} xs={12} className="pl-2 my-3 pb-1 lg:pl-10">
