@@ -23,7 +23,7 @@ export default function Mobile() {
         </div>
       </div>
       <div className="flex justify-center items-center">
-        <img src={brandLogoMobile} alt="logo" className="p-4" />
+        <img src={brandLogoMobile} alt="logo" className="w-3/4 sm:w-1/2" />
       </div>
       <div className="flex justify-center items-center">
         <CartButton />

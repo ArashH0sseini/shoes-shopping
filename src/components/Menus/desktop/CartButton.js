@@ -12,7 +12,7 @@ import Product2 from '../../../assets/images/p2.jpg'
 export default function CartButton() {
   const [open, setOpen] = useState(false)
   return (
-    <div className="flex mx-2 items-center justify-center rounded-lg p-2 border-[1px] border-[#202d2a] border-solid relative">
+    <div className="flex mx-2 items-center justify-center rounded-lg p-2 border-[1px] border-[#202d2a] border-solid relative z-10 ">
       <div
         onClick={() => setOpen(!open)}
         className="cursor-pointer transition-all delay-[5ms] lg:hover:opacity-70"
@@ -25,7 +25,7 @@ export default function CartButton() {
         </div>
       </div>
       <Fade in={open}>
-        <div className="absolute top-[67px] left-0 border-[1px] border-[#202d2a] border-solid rounded-lg w-64 p-4">
+        <div className="absolute top-[67px] left-0 border-[1px] border-[#202d2a] border-solid bg-[#011A1D] rounded-lg w-64 p-4">
           <CartItem image={Product} />
           <CartItem image={Product2} />
           <div className="flex justify-between">
@@ -37,7 +37,7 @@ export default function CartButton() {
             </Typography>
           </div>
           <Button variant="contained" color="secondary" size="large" fullWidth>
-            تکمیل خرید
+            مشاهده سبد خرید
           </Button>
         </div>
       </Fade>

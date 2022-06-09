@@ -13,7 +13,7 @@ export default function ProfileButton() {
   const { dispatch } = useContext(LoginContext)
   const [open, setOpen] = useState(false)
   return (
-    <div className="flex items-center justify-center relative rounded-lg p-2 border-[1px] border-[#202d2a] border-solid w-[90px] h-full">
+    <div className="flex items-center justify-center relative rounded-lg p-2 border-[1px] border-[#202d2a] border-solid w-[90px] h-full z-10">
       <div
         onClick={() => setOpen(!open)}
         className="flex cursor-pointer transition-all delay-[5ms] hover:opacity-70"
@@ -27,7 +27,7 @@ export default function ProfileButton() {
       </div>
 
       <Fade in={open}>
-        <div className="absolute p-4 top-[67px] left-0 border-[1px] border-[#202d2a] border-solid rounded-lg w-48">
+        <div className="absolute p-4 top-[67px] left-0 border-[1px] border-[#202d2a] border-solid rounded-lg w-48 bg-[#011A1D]">
           {localStorage.token ? (
             <>
               <Button
