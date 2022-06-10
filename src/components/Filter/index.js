@@ -1,5 +1,6 @@
-import { Grid } from '@mui/material'
-import React from 'react'
+/* eslint-disable react-hooks/rules-of-hooks */
+import { Collapse, Grid } from '@mui/material'
+import React, { useState } from 'react'
 import Brands from './Brands'
 import Category from './Category'
 import Title from './Title'
@@ -9,15 +10,18 @@ import Colors from './Colors'
 import Size from './Size'
 
 export default function index() {
+  const [open, setOpen] = useState(false)
   return (
-    <Grid container direction="column">
-      <Title title="فیلترها" />
-      <Brands />
-      <Sort />
-      <Category />
-      <Price />
-      <Colors />
-      <Size />
-    </Grid>
+    <Collapse in={open || window.innerWidth > 580} collapsedSize={30}>
+      <Grid container direction="column">
+        <Title open={open} onClick={() => setOpen(!open)} title="فیلترها" />
+        <Brands />
+        <Sort />
+        <Category />
+        <Price />
+        <Colors />
+        <Size />
+      </Grid>
+    </Collapse>
   )
 }
